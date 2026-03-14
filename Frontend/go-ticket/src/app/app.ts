@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TicketsService } from './services/tickets';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
+
   protected readonly title = signal('go-ticket');
+
+  constructor(private ticketsService: TicketsService) {
+
+    this.ticketsService.getTickets().subscribe(data => {
+      console.log("Tickets:", data);
+    });
+
+  }
+
 }
