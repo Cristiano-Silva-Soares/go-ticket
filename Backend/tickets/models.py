@@ -15,3 +15,18 @@ class TicketType(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.price}"
+
+
+class VisitSlot(models.Model):
+    date = models.DateField()
+
+    start_time = models.TimeField()
+
+    end_time = models.TimeField()
+
+    max_capacity = models.PositiveIntegerField()
+
+    sold_tickets = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.date} {self.start_time}-{self.end_time}"

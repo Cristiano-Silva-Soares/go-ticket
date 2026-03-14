@@ -1,15 +1,19 @@
+import uuid
 from django.db import models
 from django.conf import settings
 
-from tickets.models import TicketType
+from tickets.models import TicketType, VisitSlot
 
 
 class Sale(models.Model):
-    ticket_type = models.ForeignKey(
-        TicketType,
-        on_delete=models.PROTECT
-    )
+    ticket_type = models.ForeignKey(TicketType, on_delete=models.PROTECT)
 
+    visit_slot = models.ForeignKey(
+        VisitSlot,
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True
+    )
     attendant = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.PROTECT
@@ -28,6 +32,10 @@ class Sale(models.Model):
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+
+    checked_in = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         self.unit_price = self.ticket_type.price
