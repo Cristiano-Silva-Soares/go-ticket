@@ -1,0 +1,112 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo-wrapper {
+    margin-bottom: 10px;
+    img { 
+      max-width: 180px; 
+      height: auto;
+    }
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600; // Um pouco mais de peso para combinar com a Home
+    margin-bottom: 8px;
+    color: #1a237e; // Label no azul marinho da paleta
+    padding-left: 5px;
+  }
+
+  .full-width {
+    width: 100%;
+    margin-bottom: 10px;
+
+    ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+      display: none; 
+    }
+
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      background-color: #f0f2f5 !important; // Cinza levemente azulado (mais moderno)
+      border-radius: 50px !important; // Formato pílula igual aos botões da Home
+      padding: 0 20px !important;
+      height: 52px !important;
+      display: flex;
+      align-items: center;
+      border: 1px solid transparent;
+      transition: border 0.3s ease;
+    }
+
+    /* Efeito de foco para combinar com a interatividade da Home */
+    &:focus-within ::ng-deep .mat-mdc-text-field-wrapper {
+      border: 1px solid #1a237e;
+    }
+
+    ::ng-deep .mdc-notched-outline__leading,
+    ::ng-deep .mdc-notched-outline__notch,
+    ::ng-deep .mdc-notched-outline__trailing {
+      border: none !important;
+    }
+
+    input {
+      font-size: 15px !important;
+      color: #333;
+    }
+  }
+
+  .btn-entrar {
+    width: 100%;
+    background-color: #1a237e !important; // Azul Marinho da Home
+    color: white !important;
+    border-radius: 50px !important; // Pílula idêntica ao "Registrar"
+    height: 52px;
+    margin: 25px 0 15px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none; // Evita o Caps Lock padrão do Material
+    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2) !important; // Sombra leve azulada
+    
+    &:hover {
+      background-color: #0d144d !important; // Tom mais escuro no hover
+    }
+  }
+
+  .login-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    
+    a {
+      color: #1a237e; // Links no azul da marca
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      &:hover { text-decoration: underline; }
+    }
+  }
+}

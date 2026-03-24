@@ -1,33 +1,71 @@
-<section class="hero">
+<app-navbar></app-navbar>
 
-  <h1>Modern Museum Ticket System</h1>
+<main class="home-container">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Sistema de bilheteria inteligente para museus.</h1>
+      <p>Modernize a venda de ingressos no seu museu com o controle em tempo real, relatórios completos e check-in digital.</p>
+      <div class="hero-btns">
+        <button mat-flat-button color="primary">Solicitar Demo <mat-icon>arrow_forward</mat-icon></button>
+        <button mat-stroked-button>Ver planos</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/hero-illustration.png" alt="Ilustração GoTicket">
+    </div>
+  </section>
 
-  <p>
-    Manage museum visitors, ticket sales and reports efficiently.
-  </p>
+  <section class="features-section">
+    <h2>Funcionalidades que transformam a gestão do seu museu</h2>
+    <div class="features-grid">
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <h3>Venda Online</h3>
+          <p>Permita que visitantes comprem ingressos antecipadamente pelo celular.</p>
+          <div class="placeholder-img"></div>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card class="feature-card tall">
+        <mat-card-content>
+          <h3>Controle de Capacidade</h3>
+          <p>Limite visitantes por horário para evitar superlotação.</p>
+          <div class="placeholder-img"></div>
+        </mat-card-content>
+      </mat-card>
 
-  <button routerLink="/login">
-    Start Now
-  </button>
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <h3>Check-in via QR Code</h3>
+          <p>Leitura rápida na entrada do museu sem filas.</p>
+          <div class="placeholder-img"></div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
 
-</section>
+  <section class="stats-section">
+    <div class="stats-main-card">
+      <p>Redução de até</p>
+      <h2>70% <span>nas filas</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">Check-in em menos de 1 min</div>
+      <div class="stat-item">Relatórios em tempo real</div>
+      <div class="stat-item">Gestão de acessos</div>
+      <div class="stat-item">Pagamento integrado</div>
+    </div>
+  </section>
 
-
-<section class="features">
-
-  <div class="feature">
-    <h3>Fast Check-in</h3>
-    <p>QR code validation for faster access.</p>
-  </div>
-
-  <div class="feature">
-    <h3>Capacity Control</h3>
-    <p>Limit visitors per time slot.</p>
-  </div>
-
-  <div class="feature">
-    <h3>Analytics</h3>
-    <p>Track revenue and peak hours.</p>
-  </div>
-
-</section>
+  <section class="faq-section">
+    <h2>Perguntas frequentes</h2>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>O sistema funciona para museus públicos?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Sim, o sistema é adaptável para diferentes modelos de gestão.</p>
+      </mat-expansion-panel>
+      </mat-accordion>
+  </section>
+</main>

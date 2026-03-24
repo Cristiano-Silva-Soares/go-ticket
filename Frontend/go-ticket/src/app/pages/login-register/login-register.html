@@ -1,1 +1,50 @@
-<p>login-register works!</p>
+<div class="auth-container">
+  <div class="auth-card">
+    
+    <div class="logo-wrapper">
+      <img src="assets/logo-goticket.png" alt="Go Ticket">
+    </div>
+
+    <p class="subtitle">Crie sua conta</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      
+      <label>Nome Completo</label>
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput formControlName="name" placeholder="Ex: João Silva">
+      </mat-form-field>
+
+      <label>E-mail</label>
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput formControlName="email" placeholder="seuemail@email.com" type="email">
+      </mat-form-field>
+
+      <label>Senha</label>
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" placeholder="Mínimo 6 caracteres">
+        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" type="button">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <label>Confirmar Senha</label>
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput formControlName="confirmPassword" [type]="hidePassword ? 'password' : 'text'" placeholder="Repita a senha">
+      </mat-form-field>
+
+      <mat-error *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched">
+        As senhas não coincidem.
+      </mat-error>
+
+      <button mat-flat-button class="btn-auth" type="submit" [disabled]="!registerForm.valid">
+        Cadastrar
+      </button>
+
+      <div class="auth-footer">
+        <span>Já tem conta?</span>
+        <a href="#">Fazer Login</a>
+      </div>
+      
+    </form>
+  </div>
+</div>

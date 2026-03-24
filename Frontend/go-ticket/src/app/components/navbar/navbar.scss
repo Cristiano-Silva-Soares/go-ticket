@@ -1,0 +1,83 @@
+.navbar {
+  background-color: white !important;
+  color: #1a237e !important;
+  height: 80px;
+  border-bottom: 1px solid #f0f2f5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Container que agrupa os links e botões no Desktop */
+.nav-content {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+
+  button {
+    color: #333;
+    font-weight: 500;
+    
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.auth-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  .login-btn {
+    color: #1a237e;
+    font-weight: 600;
+  }
+
+  .btn-round {
+    border-radius: 50px !important;
+    padding: 0 25px !important;
+    background-color: #1a237e !important;
+    color: white !important;
+  }
+}
+
+/* BOTÃO HAMBÚRGUER (Escondido por padrão) */
+.menu-btn {
+  display: none;
+  color: #1a237e;
+}
+
+/* --- RESPONSIVIDADE (ZOOM E MOBILE) --- */
+@media (max-width: 1024px) {
+  .nav-content {
+    display: none; /* Esconde todo o conteúdo de navegação de uma vez */
+  }
+
+  .menu-btn {
+    display: block !important; /* Mostra o hambúrguer no lugar */
+  }
+}

@@ -1,0 +1,129 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 0;
+  
+  .hero-content {
+    flex: 1;
+    h1 { font-size: 3rem; color: #1a237e; font-weight: bold; }
+    p { font-size: 1.2rem; color: #666; margin: 20px 0; }
+  }
+  
+  .hero-image { flex: 1; text-align: right; img { max-width: 100%; } }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  
+  .feature-card {
+    background: #f5f6fa;
+    border-radius: 12px;
+    &.tall { grid-row: span 2; }
+  }
+}
+
+.stats-section {
+  display: flex;
+  gap: 30px;
+  margin: 60px 0;
+  
+  .stats-main-card {
+    background: #5c6bc0;
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    flex: 1;
+  }
+  
+  .stats-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    
+    .stat-item {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 8px;
+    }
+  }
+}
+
+.feature-card {
+  border-radius: 24px !important; // Bordas bem arredondadas como no print
+  border: none !important;
+  box-shadow: none !important; // Remove a sombra padrão do Material
+  background-color: #f0f2ff; // Cor de fundo suave
+  
+  h3 {
+    color: var(--primary-blue);
+    font-weight: 700;
+  }
+}
+
+.stats-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; // 3 colunas
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.main-stat-card {
+  grid-row: span 2; // Faz o card do "70%" ocupar duas linhas
+  background-color: #5c6bc0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+/* Hero Section Responsiva */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Texto em cima, imagem embaixo */
+    text-align: center;
+    padding: 60px 20px;
+
+    .hero-content {
+      max-width: 100%;
+      h1 { font-size: 2.2rem; } /* Diminui o título no celular */
+    }
+
+    .hero-image {
+      margin-top: 40px;
+      img { max-width: 80%; }
+    }
+  }
+
+  /* Grid de Funcionalidades */
+  .features-grid {
+    grid-template-columns: 1fr; /* Vira uma coluna única */
+    grid-template-areas: none; /* Desfaz o layout especial */
+    
+    .feature-card.tall {
+      min-height: auto; /* Tira a altura fixa do card alto */
+    }
+  }
+
+  /* Seção de Resultados */
+  .stats-section {
+    grid-template-columns: 1fr; /* Empilha o card roxo e os itens */
+    
+    .stats-grid {
+      grid-template-columns: 1fr; /* Itens da lista um abaixo do outro */
+    }
+  }
+}
+
+.btn-round { border-radius: 20px !important; }

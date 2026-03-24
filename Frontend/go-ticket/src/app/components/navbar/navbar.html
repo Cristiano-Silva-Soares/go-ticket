@@ -1,0 +1,43 @@
+<mat-toolbar class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/logo-goticket.png" alt="Go Ticket" height="40">
+    </div>
+
+    <span class="spacer"></span>
+
+    <div class="nav-content">
+      <div class="nav-links">
+        <button mat-button>Página Inicial</button>
+        <button mat-button>Sobre</button>
+        <button mat-button [matMenuTriggerFor]="recursos">
+          Recursos <mat-icon>expand_more</mat-icon>
+        </button>
+        <button mat-button>Contato</button>
+      </div>
+
+      <div class="auth-actions">
+        <button mat-button class="login-btn">Login</button>
+        <button mat-flat-button color="primary" class="btn-round">Registrar</button>
+      </div>
+    </div>
+
+    <button mat-icon-button class="menu-btn" [matMenuTriggerFor]="mobileMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-menu #recursos="matMenu">
+  <button mat-menu-item>Funcionalidade A</button>
+  <button mat-menu-item>Funcionalidade B</button>
+</mat-menu>
+
+<mat-menu #mobileMenu="matMenu">
+  <button mat-menu-item>Página Inicial</button>
+  <button mat-menu-item>Sobre</button>
+  <button mat-menu-item>Contato</button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>Login</button>
+  <button mat-menu-item color="primary">Registrar</button>
+</mat-menu>

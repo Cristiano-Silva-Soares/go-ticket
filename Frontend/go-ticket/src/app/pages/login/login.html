@@ -1,17 +1,33 @@
 <div class="login-container">
+  <div class="login-card">
+    
+    <div class="logo-wrapper">
+      <img src="assets/logo-goticket.png" alt="Go Ticket Logo">
+    </div>
 
-  <h2>Employee Login</h2>
+    <p class="subtitle">Efetue seu login</p>
 
-  <form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+      <label>E-mail</label>
+      <mat-form-field appearance="outline" class="full-width">
+        <input matInput formControlName="email" placeholder="email@email.com" type="email">
+      </mat-form-field>
 
-    <input type="text" placeholder="Username">
+      <label>Senha</label>
+      <mat-form-field appearance="outline" class="full-width">
+        <input matInput formControlName="password" placeholder="senha123#@" type="password">
+      </mat-form-field>
 
-    <input type="password" placeholder="Password">
+      <button mat-flat-button class="btn-entrar" type="submit" [disabled]="!loginForm.valid">
+        Entrar
+      </button>
 
-    <button type="submit">
-      Login
-    </button>
-
-  </form>
-
+      <div class="login-footer">
+        <a href="#">Criar conta</a>
+        <a href="#">Recuperar senha</a>
+      </div>
+      
+    </form>
+  </div>
 </div>

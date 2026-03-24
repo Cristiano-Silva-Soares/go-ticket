@@ -13,11 +13,6 @@ export class App {
   protected readonly title = signal('go-ticket');
 
   constructor(private ticketsService: TicketsService) {
-
-    this.ticketsService.getTickets().subscribe(data => {
-      console.log("Tickets:", data);
-    });
-
   }
 
 }
