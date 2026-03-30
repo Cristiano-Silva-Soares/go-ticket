@@ -7,11 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider'; // Adicionado para o menu mobile
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
+    RouterModule,
     CommonModule,
     MatToolbarModule,
     MatButtonModule,
@@ -23,4 +26,13 @@ import { MatDividerModule } from '@angular/material/divider'; // Adicionado para
   styleUrl: './navbar.scss'
 })
 export class NavbarComponent {
+  constructor(private router: Router) {}
+
+    goToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+    goToRegister() {
+    this.router.navigate(['/user-register']);
+  }
 }

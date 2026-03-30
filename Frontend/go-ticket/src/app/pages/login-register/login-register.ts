@@ -6,6 +6,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'; // Para ícone de exibir senha
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -16,7 +19,8 @@ import { MatIconModule } from '@angular/material/icon'; // Para ícone de exibir
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
   ],
   templateUrl: './login-register.html',
   styleUrl: './login-register.scss' // Vamos reutilizar a lógica de estilo do login
@@ -25,7 +29,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
   hidePassword = true; // Para o ícone de 'olhinho'
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.registerForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -49,5 +53,9 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       console.log('Dados de registro:', this.registerForm.value);
     }
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 }

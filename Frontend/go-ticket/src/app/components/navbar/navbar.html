@@ -17,8 +17,8 @@
       </div>
 
       <div class="auth-actions">
-        <button mat-button class="login-btn">Login</button>
-        <button mat-flat-button color="primary" class="btn-round">Registrar</button>
+        <button mat-button class="login-btn" (click)="goToLogin()">Login</button>
+        <button mat-flat-button color="primary" class="btn-round" (click)="goToRegister()">Registrar</button>
       </div>
     </div>
 
@@ -38,6 +38,6 @@
   <button mat-menu-item>Sobre</button>
   <button mat-menu-item>Contato</button>
   <mat-divider></mat-divider>
-  <button mat-menu-item>Login</button>
-  <button mat-menu-item color="primary">Registrar</button>
+  <button mat-menu-item (click)="goToLogin()">Login</button>
+  <button mat-menu-item color="primary" (click)="goToRegister()">Registrar</button>
 </mat-menu>

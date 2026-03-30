@@ -16,10 +16,6 @@
 
   .logo-wrapper {
     margin-bottom: 10px;
-    img { 
-      max-width: 180px; 
-      height: auto;
-    }
   }
 
   .subtitle {
@@ -106,6 +102,7 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: 500;
+      cursor: pointer;
       &:hover { text-decoration: underline; }
     }
   }
